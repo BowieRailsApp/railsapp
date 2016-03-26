@@ -4,6 +4,7 @@ class CreateTables < ActiveRecord::Migration
       t.integer :guests
       t.boolean :paid
       t.references :users
+    
       t.timestamps
     end
   end
