@@ -34,20 +34,30 @@
 #### Entity Relationship Diagram version 1:
 ---
 
-### Wireframes version(To be added):
+### Wireframes:
+![alt text](app/assets/images/orders.png)
 
 #### Sign in | Log in Page
-
-
-#### Member Home Page
-
+By default, users will be redirected to the signup/login page if they are not logged in.
 
 #### Order page
+The orders page will have two levels. The first level consist of square grids that represent orders placed.
 
+On selection of a grid, a more detailed view will appear. This view will show the current order and the receipt on the side.
 
-#### Admin page
----
+Users will be able to edit orders.
+When finished, users can print the receipt.
+
+#### Admin/Menu Page
+The menu page will display the current menu.
+A selection of actions will be displayed on the side. These actions will allow the user to update, add, and delete items from the menu.
+
+#### Chefs Page
+The chefs page will display orders in rectangular grids. These grids will come in the order that they are placed in. As time progresses, orders will change from green to a reddish color. The redder the order, the longer it's been there.
+
+Checkboxes can be shown at each order. These check boxes allow for the removal of the order upon completion.
 
 ## Authors
 * Sara Horowitz
 * Razaik Boparai
+* Elton Cheng
