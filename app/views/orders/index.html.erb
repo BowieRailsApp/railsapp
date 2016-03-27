@@ -1,0 +1,9 @@
+<h1> Place a order </h1>
+
+<table>
+<% @orders.each do |order| %>
+<tr>
+  <td><%= order.cooked %></td>
+</tr>
+<% end %>
+</table>
