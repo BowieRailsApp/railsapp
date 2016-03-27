@@ -16,6 +16,7 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
+
     if @order.save
       redirect_to orders_path
     else
@@ -26,7 +27,7 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:tables_id, :cooked)
+    params.require(:order).permit(:table_id, :cooked)
   end
 
 end

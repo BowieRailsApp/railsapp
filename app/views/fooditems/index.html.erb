@@ -6,7 +6,7 @@
     <div class="food-items">
     <%= fooditem.itemname %><br>
     <%= fooditem.cuisine %><br>
-    <%= fooditem.price %>
+    <%= fooditem.price %><br>
     <%= link_to "Remove Item", fooditem_path(fooditem.id), :method => :delete %>
     <%= link_to "Edit Item", edit_fooditem_path(fooditem.id) %>
     </div>
