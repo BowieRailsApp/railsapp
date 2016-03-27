@@ -9,20 +9,14 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:current_user_id] = @user.id
+      redirect_to root_path
     else
-      # redirect_to new_user_path
+      redirect_to new_user_path
     end
   end
 
   def show
     @user = User.find(params[:id])
-    # if @user.employee_type == "Admin"
-    #   redirect_to fooditems_path
-    # elsif @user.employee_type == "Server"
-    #   redirect_to tables_path
-    # else
-    #   redirect_to root_path
-    # end
   end
 
   def destroy
@@ -32,9 +26,6 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
-  # def welcome
-  #   @user = User.find(params[:id])
-  # end
 
   private
 
