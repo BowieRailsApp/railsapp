@@ -16,8 +16,6 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
-    fooditem = Fooditem.find(params[fooditem.id])
-    binding.pry
     if @order.save
       redirect_to orders_path
     else

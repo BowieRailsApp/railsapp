@@ -2,19 +2,19 @@
 
   <%= form_for @order do |f| %>
 
-  <select name="tables_id">
-      <% @tables.each do |table| %>
-        <option value="<%= table.id %>" > <%= table.guests %></option>
-      <% end %>
-    </select><br>
+  <%= f.label :table %><br>
+  <%= collection_select(:order, :table_id, @tables, :id, :guests) %><br><br>
 
-  <select name="fooditems_id", prompt: "Select Dishes", :multiple => true>
+
+  <%= f.label :fooditem, :multiple => true %>
+  <%= collection_select(:fooditem_order, :fooditem_id, @fooditems, :id, :itemname) %>
+
     <!-- <% {prompt: "Select Dishes", :multiple => true} %> -->
-      <% @fooditems.each do |fooditem| %>
+      <!-- <% @fooditems.each do |fooditem| %>
         <option value="<%= fooditem.id %>"><%= fooditem.itemname %></option>
-      <% end %>
+      <% end %> -->
 
-    </select><br>
+    <!-- </select><br> -->
 
     <%= f.label :cooked %>
     <%= f.check_box :cooked, {}, true, false %> <br>
