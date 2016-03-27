@@ -1,8 +1,8 @@
 <div class="form-items">
-  
+
   <%= link_to "Add a new food item?", new_fooditem_path %></p>
 
-  <% @fooditem.each do |fooditem| %>
+  <% @fooditems.each do |fooditem| %>
     <div class="food-items">
     <%= fooditem.itemname %><br>
     <%= fooditem.cuisine %><br>

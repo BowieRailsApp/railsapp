@@ -12,8 +12,7 @@
        <h1>Welcome Back</h1>
        <%= link_to "#{User.find(session[:current_user_id]).username}", user_path(session[:current_user_id]) %> ||
        <%= link_to "Logout", sessions_path, method: :delete %>||
-       <%= link_to "Tables", tables_path %>||
-       <%= link_to "Orders", fooditems_path %>
+       <%= link_to "Menu", fooditems_path %>
        <!-- <%= link_to "Chefs", sessions_path %> -->
        <% else %>
        <h1>Already A Member</h1>

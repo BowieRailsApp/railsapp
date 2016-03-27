@@ -1,10 +1,10 @@
 class FooditemsController < ApplicationController
   def index
-    @fooditem = Fooditem.all
+    @fooditems = Fooditem.all
   end
 
   def show
-    @fooditemem = Fooditem.find(params[:id])
+    @fooditem = Fooditem.find(params[:id])
   end
 
   def new
@@ -15,15 +15,15 @@ class FooditemsController < ApplicationController
     @fooditem = Fooditem.new(fooditem_params)
     if @fooditem.save
     redirect_to fooditems_path
-  else
+    else
     redirect_to new_fooditem_path
-  end
+    end
   end
 
   def edit
     @fooditem = Fooditem.find(params[:id])
   end
-  
+
   def update
     @fooditem = Fooditem.find(params[:id])
     @fooditem.update(fooditem_params)
@@ -31,6 +31,7 @@ class FooditemsController < ApplicationController
   end
 
   def destroy
+    # if the order associated with the food item is cooked then delete the food item 
     @fooditem = Fooditem.find(params[:id])
     @fooditem.destroy
     redirect_to fooditems_path
