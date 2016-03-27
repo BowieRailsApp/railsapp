@@ -1,10 +1,10 @@
 class FooditemsController < ApplicationController
   def index
-    @fooditem = Fooditem.all
+    @fooditems = Fooditem.all
   end
 
   def show
-    @fooditemem = Fooditem.find(params[:id])
+    @fooditem = Fooditem.find(params[:id])
   end
 
   def new
@@ -23,7 +23,7 @@ class FooditemsController < ApplicationController
   def edit
     @fooditem = Fooditem.find(params[:id])
   end
-  
+
   def update
     @fooditem = Fooditem.find(params[:id])
     @fooditem.update(fooditem_params)

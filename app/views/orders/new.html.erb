@@ -1,0 +1,25 @@
+<div class="form">
+
+  <%= form_for @order do |f| %>
+
+  <select name="tables_id">
+      <% @tables.each do |table| %>
+        <option value="<%= table.id %>" > <%= table.guests %></option>
+      <% end %>
+    </select><br>
+
+  <select name="fooditems_id", prompt: "Select Dishes", :multiple => true>
+    <!-- <% {prompt: "Select Dishes", :multiple => true} %> -->
+      <% @fooditems.each do |fooditem| %>
+        <option value="<%= fooditem.id %>"><%= fooditem.itemname %></option>
+      <% end %>
+
+    </select><br>
+
+    <%= f.label :cooked %>
+    <%= f.check_box :cooked, {}, true, false %> <br>
+
+  <%= f.submit "Add Order" %>
+
+  <% end %>
+</div>
