@@ -1,5 +1,5 @@
 <div class="form">
-
+  <br>
   <%= form_for @order do |f| %>
     <%= f.label :table %>
     <%= f.collection_select(:table_id, @tables, :id, :id, :prompt => true) %><br>

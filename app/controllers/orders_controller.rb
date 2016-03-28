@@ -16,18 +16,16 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
-    binding.pry
-    # dropping the first element of the array as it is always "" for some reason.
-
+    # dropping the first element of the array as it is always "" for some reason
     foodarr = params["order"]["fooditem_order"]["fooditem_id"].drop(1)
 
     if @order.save
       # looping over food arr and inserting the values in fooditems_orders join table
-      foodarr.each { |id|
+      foodarr.each do |id|
         fooditem = Fooditem.find(id)
         # order = Order.find(@order.id)
         @order.fooditems << fooditem
-      }
+      end
       redirect_to orders_path
     else
       redirect_to new_order_path
