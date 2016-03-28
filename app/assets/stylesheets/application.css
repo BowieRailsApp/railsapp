@@ -18,6 +18,14 @@
    text-align: center;
    width: 80%;
    margin: 0 auto;
-   background-color: #FFF859;
-   border-radius: 5px;
+   /*background-color: #FFF859;
+   border-radius: 5px;*/
  }
+
+#fooditem_order_fooditem_id {
+  height: 90px;
+}
+
+.order {
+  text-align: center;
+}
