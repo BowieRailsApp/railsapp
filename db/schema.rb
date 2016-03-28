@@ -30,8 +30,10 @@ ActiveRecord::Schema.define(version: 20160326233435) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "table_id"
-    t.boolean "cooked",   default: false
+    t.integer  "table_id"
+    t.boolean  "cooked",     default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "tables", force: :cascade do |t|
