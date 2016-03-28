@@ -1,0 +1,23 @@
+
+<div class="form-edit">
+
+  <%= form_for @order do |f| %>
+
+    <%= f.label :table# %>
+    <%= f.collection_select(:table_id, @tables, :id, :id, :prompt => true) %><br>
+
+    <b><p>Select food items</p></b>
+      <%= f.fields_for :fooditem_order do |fi| %>
+      <div>
+        <%=  fi.collection_select(:fooditem_id, @fooditems, :id, :itemname, {}, {:multiple => true} ) %>
+      </div>
+    <% end %>
+
+    <%= f.label :cooked %>
+    <%= f.check_box :cooked, {}, true, false %> <br>
+
+
+    <%= f.submit "Edit Order" %>
+
+  <% end %>
+</div>
