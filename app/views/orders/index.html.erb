@@ -1,21 +1,20 @@
-<h1>Orders </h1>
+<h4>Orders </h4>
 <div class="green"></div>
 <div class="red"></div>
 <div class="order">
   <div class="order-items">
     <% price = 0 %>
+
     <% @orders.each do |order| %>
     <div class="chef_order">
-      <%  order.fooditems.each { |item| %>
-        Name:<%= item.itemname%><br>
-        Price:<%= item.price%><br>
+      <strong>Table #: <%= order.table_id %></strong> <br>
+      <%  order.fooditems.each do |item| %>
+       <i>Dish:</i> <%= item.itemname%>, $<%=item.price%><br>
         <% price += item.price %>
-      <%  } %>
-    Total Price:<%=price %><br>
-    Cooked:<%= order.cooked %><br>
+      <%  end %>
+    <strong style="color: red;"> Total Price: $<%=price %> </strong><br>
     <%= link_to "Delete Order", order_path(order.id), :method => :delete %>
     <%= link_to "Edit Order", edit_order_path(order.id) %>
-    <br>
     <br>
     <% price = 0 %>
     </div>
