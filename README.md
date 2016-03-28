@@ -34,6 +34,9 @@
 #### Entity Relationship Diagram version 1:
 ---
 
+### ERD:
+![alt text](erd2.png)
+
 ### Wireframes:
 ![alt text](app/assets/images/orders.png)
 
