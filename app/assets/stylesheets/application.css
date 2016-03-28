@@ -31,7 +31,26 @@
 }
 
 .chef_order {
-  background-color: green;
   border: 1px solid black;
-  margin: 5px;
+  left: 0px;
+  width: 20%;
+  position: relative;
+}
+
+.green {
+  background-color: green;
+  position: absolute;
+  border: 1px solid black;
+  width: 10%;
+  height: 20px;
+  left: 0px;
+}
+
+.red {
+  background-color: red;
+  position: absolute;
+  border: 1px solid black;
+  width: 10%;
+  height: 20px;
+  right: 0px;
 }
