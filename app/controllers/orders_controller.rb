@@ -32,6 +32,17 @@ class OrdersController < ApplicationController
     end
   end
 
+  def destroy
+    @order = Order.find(params[:id]).destroy
+    redirect_to orders_path
+  end
+
+  def edit
+    @order = Order.new
+    @tables = Table.all
+    @fooditems = Fooditem.all
+  end
+
   private
 
   def order_params
