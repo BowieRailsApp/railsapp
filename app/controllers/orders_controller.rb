@@ -15,7 +15,6 @@ class OrdersController < ApplicationController
   end
 
   def create
-    binding.pry
     @order = Order.new(order_params)
     # dropping the first element of the array as it is always "" for some reason
     foodarr = params["order"]["fooditem_order"]["fooditem_id"].drop(1)

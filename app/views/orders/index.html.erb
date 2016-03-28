@@ -6,10 +6,10 @@
     <% @orders.each do |order| %>
     <strong>Table # <%= order.table_id %></strong><br>
       <%  order.fooditems.each do |item| %>
-          <i>Dish: </i><%= item.itemname%>,$<%= item.price%><br>
+          <i>Dish: </i><%= item.itemname%> , $<%= item.price%><br>
         <% price += item.price %>
       <% end %>
-    <strong style="color:red;">Total Price:<%=price %></strong><br>
+    <strong style="color:red;">Total Price: <%=price %></strong><br>
     <!-- Cooked:<%= order.cooked %><br> -->
     <%= link_to "Delete Order", order_path(order.id), :method => :delete %>
     <%= link_to "Edit Order", edit_order_path(order.id) %>
