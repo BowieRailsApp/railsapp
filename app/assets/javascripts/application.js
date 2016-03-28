@@ -15,6 +15,5 @@
 //= require turbolinks
 //= require_tree .
 $(document).ready(function() {
-  var upAndDown = 0;
   $('.chef_order').animate({'left':'80%'},120000);
 })
