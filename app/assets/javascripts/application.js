@@ -14,7 +14,21 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+updateTime function() {
+  $('.chef_color').each(function(el) {
+    console.log(el, $(el).id);
+  })
+}
+
+var timeNow = moment()
+var dataTime = moment(this.props.details[0].commit.author.date)
+var daysElapsed = timeNow.diff(dataTime, 'seconds')
+
 $(document).ready(function() {
   console.log('loaded');
   console.log($('.order-items'));
+
+  window.setInterval(() => {updateTime()},1000)
 })

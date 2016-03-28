@@ -32,6 +32,10 @@ class OrdersController < ApplicationController
     end
   end
 
+  def chef
+    @orders = Order.all
+  end
+
   private
 
   def order_params
