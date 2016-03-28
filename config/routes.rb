@@ -9,7 +9,12 @@
     resources :users, only: [:new, :create, :show, :destroy]
     resources :tables
     resources :fooditems
-    resources :orders
+    resources :orders do
+  member do
+    put 'add_item'
+    put 'remove_item'
+  end
+ end
     get 'sessions/new' => 'sessions#new'
     post 'sessions' => 'sessions#create'
     delete 'sessions' => 'sessions#destroy'

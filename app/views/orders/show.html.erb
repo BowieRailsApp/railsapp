@@ -1,0 +1,17 @@
+<h2>Order:<%= @order.id %> </h2>
+<!-- <% @porder.fooditems.each do |fooditem| %> -->
+
+
+
+<div >
+<form action="/orders/<%= @order.id %>/add_item" method="post">
+<input type="hidden" name="_method" value="put">
+<select name="fooditem_id">
+  <% @fooditems.each do |fooditem| %>
+    <option value="<%= fooditem.id %>"><%= fooditem.itemname %></option>
+  <% end %>
+</select><br><br>
+<input type="submit" value="Add Dish to Order">
+</form>
+</div>
+<% end %>
