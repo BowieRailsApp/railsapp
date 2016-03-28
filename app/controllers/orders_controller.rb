@@ -16,6 +16,7 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
+    binding.pry
     # dropping the first element of the array as it is always "" for some reason.
 
     foodarr = params["order"]["fooditem_order"]["fooditem_id"].drop(1)
@@ -33,6 +34,11 @@ class OrdersController < ApplicationController
     end
   end
 
+  def destroy
+    @order = Order.find(params[:id]).destroy
+    redirect_to orders_path
+  end
+
   def edit
     @order = Order.find(params[:id])
     @tables = Table.all
@@ -45,17 +51,10 @@ class OrdersController < ApplicationController
     redirect_to orders_path
   end
 
-  def destroy
-    # if the order associated with the food item is cooked then delete the food item
-    @fooditem = Fooditem.find(params[:id])
-    @fooditem.destroy
-    redirect_to fooditems_path
-  end
-
   private
 
   def order_params
-    params.require(:order).permit(:table_id, :fooditem_id , :cooked)
+    params.require(:order).permit(:table_id, :fooditem_order, :cooked)
   end
 
 end
