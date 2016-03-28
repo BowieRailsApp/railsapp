@@ -29,9 +29,6 @@ ActiveRecord::Schema.define(version: 20160326233435) do
     t.integer "fooditem_id", null: false
   end
 
-  add_index "fooditems_orders", ["fooditem_id", "order_id"], name: "index_fooditems_orders_on_fooditem_id_and_order_id", using: :btree
-  add_index "fooditems_orders", ["order_id", "fooditem_id"], name: "index_fooditems_orders_on_order_id_and_fooditem_id", using: :btree
-
   create_table "orders", force: :cascade do |t|
     t.integer "table_id"
     t.boolean "cooked",   default: false
