@@ -3,12 +3,11 @@
   <div class="order-items">
     <% price = 0 %>
     <% @orders.each do |order| %>
+    <div class="chef_order">
       <%  order.fooditems.each { |item| %>
-        <div id=<%=order.id% class="chef_color">
         Name:<%= item.itemname%><br>
         Price:<%= item.price%><br>
         <% price += item.price %>
-        </div>
       <%  } %>
     Total Price:<%=price %><br>
     Cooked:<%= order.cooked %><br>
@@ -17,6 +16,7 @@
     <br>
     <br>
     <% price = 0 %>
+    </div>
   <% end %>
   </div>
 </div>

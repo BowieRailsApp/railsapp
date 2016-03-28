@@ -28,8 +28,7 @@ function updateTime() {
 // var daysElapsed = timeNow.diff(dataTime, 'seconds')
 
 $(document).ready(function() {
-  console.log('loaded');
-  console.log($('.order-items'));
-
   window.setInterval(() => {updateTime()},1000)
+
+  $('.chef_order').animate({'left':'80%'},120000);
 })

@@ -1,17 +1,15 @@
 <div class="form">
-
+  <br>
   <%= form_for @order do |f| %>
-  <%= f.label :table %>
-  <%= collection_select(:order, :table_id, @tables, :id, :guests, :prompt => true) %><br>
+    <%= f.label :table %>
+    <%= f.collection_select(:table_id, @tables, :id, :id, :prompt => true) %><br>
 
-  <b><p>Select food items</p></b>
-  <%= f.fields_for :fooditem_order do |fi| %>
+    <b><p>Select Dishes</p></b>
+    <%= f.fields_for :fooditem_order do |fi| %>
     <div>
-      <%=  collection_select(:fooditem_order ,:fooditem_id, @fooditems, :id, :itemname, {},{:multiple => true} ) %>
+      <%=  fi.collection_select(:fooditem_id, @fooditems, :id, :itemname, {}, {:multiple => true} ) %>
     </div>
   <% end %>
-  <%= f.label :cooked %>
-  <%= f.check_box :cooked, {}, true, false %> <br>
 
   <%= f.submit "Add Order" %>
 
