@@ -1,9 +1,15 @@
-<h1> What up you funky server </h1>
-
-<table>
-<% @tables.each do |table| %>
-<tr>
-  <td><%= table.guests %></td>
-</tr>
-<% end %>
-</table>
+<div class="form-items">
+  <br>
+  <%= link_to "Add a new table?", new_table_path %>
+  <br>
+  <br>
+  <% @tables.each do |table| %>
+    <div class="food-items">
+    <i>Table Number:</i> <%= table.id %><br>
+    <i>Guest Capacity:</i> <%= table.guests %><br>
+    <%= link_to "Remove Table", table_path(table.id), :method => :delete %>
+    <%= link_to "Edit Table", edit_table_path(table.id) %>
+    </div>
+      <br>
+  <% end %>
+</div>
