@@ -1,8 +1,5 @@
 class Order < ActiveRecord::Base
-  belongs_to :table
+  belongs_to :tables
   has_and_belongs_to_many :fooditems
-
-  validates :guests, presence: true
-
 
 end

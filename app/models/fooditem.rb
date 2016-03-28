@@ -6,7 +6,4 @@ class Fooditem < ActiveRecord::Base
   validates :cuisine, presence: true
   validates :price, numericality: true
 
-
-
-
 end

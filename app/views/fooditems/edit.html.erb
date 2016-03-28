@@ -1,0 +1,17 @@
+<div class="form-edit">
+
+  <%= form_for @fooditem do |f| %>
+
+  <%= f.label :itemname %>
+  <%= f.text_field :itemname %> <br>
+
+  <%= f.label :cuisine %>
+  <%= f.text_field :cuisine %> <br>
+
+  <%= f.label :price %>
+  <%= f.number_field :price %> <br>
+
+  <%= f.submit "Edit" %>
+
+  <% end %>
+</div>
