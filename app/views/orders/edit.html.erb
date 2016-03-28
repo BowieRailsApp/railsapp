@@ -7,7 +7,7 @@
   <b><p>Select food items</p></b>
   <%= f.fields_for :fooditem_order do |fi| %>
     <div>
-      <%= collection_select(:fooditem_order, :fooditem_id, @fooditems, :id, :itemname, {}, {:multiple => true} ) %>
+      <%=  collection_select(:fooditem_order ,:fooditem_id, @fooditems, :id, :itemname, {},{:multiple => true} ) %>
     </div>
   <% end %>
   <%= f.label :cooked %>
