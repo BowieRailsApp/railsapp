@@ -1,5 +1,5 @@
 class Table < ActiveRecord::Base
-  validates :guests, presence: true
 
+  validates :guests, presence: true
 
 end
