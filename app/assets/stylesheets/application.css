@@ -29,3 +29,9 @@
 .order {
   text-align: center;
 }
+
+.chef_order {
+  background-color: green;
+  border: 1px solid black;
+  margin: 5px;
+}
