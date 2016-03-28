@@ -16,15 +16,16 @@
 //= require_tree .
 
 
-updateTime function() {
-  $('.chef_color').each(function(el) {
-    console.log(el, $(el).id);
+function updateTime() {
+  var a = $('.chef_color')
+  a.each(function(el) {
+    console.log(a[el], $(a[el]).attr('id'));
   })
 }
 
-var timeNow = moment()
-var dataTime = moment(this.props.details[0].commit.author.date)
-var daysElapsed = timeNow.diff(dataTime, 'seconds')
+// var timeNow = moment()
+// var dataTime = moment(this.props.details[0].commit.author.date)
+// var daysElapsed = timeNow.diff(dataTime, 'seconds')
 
 $(document).ready(function() {
   console.log('loaded');

@@ -3,7 +3,10 @@
   <div class="order-items">
     <% price = 0 %>
     <% @orders.each do |order| %>
-    <div class="chef_color" id=<%=order.updated_at.to_s%>>
+    <% a = order.updated_at %>
+    <% a = a.to_s %>
+    <% a = a.split(' ') %>
+    <div class="chef_color" id=<%=a[1]%>>
       <%  order.fooditems.each { |item| %>
         Name:<%= item.itemname%><br>
         Price:<%= item.price%><br>
