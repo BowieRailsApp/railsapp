@@ -1,0 +1,22 @@
+<h1>Orders </h1>
+<div class="order">
+  <div class="order-items">
+    <% price = 0 %>
+    <% @orders.each do |order| %>
+      <%  order.fooditems.each { |item| %>
+        <div id=<%=order.id% class="chef_color">
+        Name:<%= item.itemname%><br>
+        Price:<%= item.price%><br>
+        <% price += item.price %>
+        </div>
+      <%  } %>
+    Total Price:<%=price %><br>
+    Cooked:<%= order.cooked %><br>
+    <%= link_to "Delete Order", order_path(order.id), :method => :delete %>
+    <%= link_to "Edit Order", edit_order_path(order.id) %>
+    <br>
+    <br>
+    <% price = 0 %>
+  <% end %>
+  </div>
+</div>
